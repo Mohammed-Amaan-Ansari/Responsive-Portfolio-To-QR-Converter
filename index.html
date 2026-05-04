@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <div class="container">
+    <h1>QR My Portfolio</h1>
+    <select id="platformSelect">
+      <option value="">-- Select Platform --</option>
+      <option value="https://www.linkedin.com/in/">LinkedIn</option>
+      <option value="https://github.com/">GitHub</option>
+      <option value="other-option">Other Option</option>
+    </select>
+    <input type="text" id="urlInput" placeholder="Enter your portfolio URL..." disabled />
+
+    <div class="color-picker-container">
+      <label for="fgColor">Foreground:</label>
+      <input type="color" id="fgColor" value="#000000" />
+      <label for="bgColor">Background:</label>
+      <input type="color" id="bgColor" value="#ffffff" />
+    </div>
+
+    <div class="logo-upload-container">
+        <label for="logoUpload">Upload Logo:</label>
+        <input type="file" id="logoUpload" accept="image/*">
+    </div>
+
+    <div id="qrCard" class="qr-card"></div>
+    <button onclick="downloadQR()">Download QR</button>
+    <div id="history" class="history"></div>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
